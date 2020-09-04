@@ -1,0 +1,10 @@
+h1 Danh sách công việc cần làm
+a(href="/create") Add new to do
+form(action="/search" method="get" )
+  input(type="search" name="q" value=queryValue)
+  //`${q ? q : ''}`
+  button(type="submit") Submit
+
+ul
+  each value in listToDo
+    li= value.task
