@@ -4,6 +4,7 @@ const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
 const db = low(adapter)
+const shortid = require("shortid");
 
 // Set some defaults (required if your JSON file is empty)
 db.defaults({ listToDo: []})
@@ -37,8 +38,19 @@ app.get('/create', function(req,res){
 })
 
 app.post('/create', function(req,res){
+  req.body.id = shortid.generate();
   db.get('listToDo').push(req.body).write()
   res.redirect('/')
+})
+
+
+
+app.get('/task/:id', function(req,res){
+  var getId = req.params.id
+  var getTask = db.get('listToDo').find({id: getId}).value();
+  res.render('info',{
+    taskkk: getTask
+  })
 })
 
 // listen for requests :)

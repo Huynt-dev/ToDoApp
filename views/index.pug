@@ -8,3 +8,5 @@ form(action="/search" method="get" )
 ul
   each value in listToDo
     li= value.task
+     a(href="/task/"+ value.id) Thông tin
+     a(href="/task/"+ value.id + "/delete") Xoá
