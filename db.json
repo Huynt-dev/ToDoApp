@@ -1,10 +1,20 @@
 {
-  "posts": [],
-  "user": {},
-  "count": 0,
-  "L": [],
-  "lis": [],
-  "list": [],
-  "listTo": [],
-  "listToDo": []
+  "_locals": {},
+  "listToDo": [
+    {
+      "task": "công việc buổi sáng"
+    },
+    {
+      "task": "Ăn trưa"
+    },
+    {
+      "task": "Công việc buổi chiều"
+    },
+    {
+      "task": "Viết báo cáo công việc"
+    },
+    {
+      "task": "Lên kế hoạch công việc ngày hôm sau"
+    }
+  ]
 }
