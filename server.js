@@ -43,14 +43,24 @@ app.post('/create', function(req,res){
   res.redirect('/')
 })
 
-
-
 app.get('/task/:id', function(req,res){
   var getId = req.params.id
   var getTask = db.get('listToDo').find({id: getId}).value();
   res.render('info',{
     taskkk: getTask
   })
+})
+
+
+app.delete('/task/:id', function(req,res){
+  var getId = req.params.id
+  var getData = db.get('listToDo').value()
+  getData.remove(getId, function(err){
+    if(err){
+      console.log('loi roiiiii')
+    }
+  })
+  res.send('DELETE Request');
 })
 
 // listen for requests :)
